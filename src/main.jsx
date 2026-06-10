@@ -103,12 +103,76 @@ function Hero() {
   );
 }
 
+function Services() {
+  const baseUrl = import.meta.env.BASE_URL;
+  const services = [
+    {
+      title: "Budget your fuel before you move.",
+      buttonLabel: "Get the app",
+      variant: "dark",
+      image: "service-app-phones.png",
+      imageAlt: "Meshwary mobile app screens",
+    },
+    {
+      title: "Daily fuel updates. Best routes. Always.",
+      buttonLabel: "Get started",
+      variant: "photo",
+      image: "service-fuel.jpg",
+      imageAlt: "Fuel station pump nozzles",
+    },
+    {
+      title: "Tell Meshwary where to go, it handles the rest.",
+      buttonLabel: "Download app",
+      variant: "light",
+      image: "service-assistant-phone.png",
+      imageAlt: "Meshwary assistant on a phone",
+    },
+    {
+      title: "Plan your trip, know your spend.",
+      buttonLabel: "Learn more",
+      variant: "photo",
+      image: "service-road.jpg",
+      imageAlt: "A car driving on a coastal mountain road",
+    },
+  ];
+
+  return (
+    <section className="services" id="services">
+      <div className="section-kicker">MESHWARY app</div>
+      <h2 className="section-title">Our Services</h2>
+
+      <div className="services-grid">
+        {services.map((service) => (
+          <article
+            className={`service-card service-card-${service.variant}`}
+            key={service.title}
+          >
+            <div className="service-card-copy">
+              <h3>{service.title}</h3>
+              <a className="button button-primary service-button" href="#get-meshwary">
+                {service.buttonLabel}
+              </a>
+            </div>
+
+            <img
+              className="service-card-image"
+              src={`${baseUrl}assets/${service.image}`}
+              alt={service.imageAlt}
+            />
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function App() {
   return (
     <>
       <Header />
       <main className="page-shell">
         <Hero />
+        <Services />
       </main>
     </>
   );
