@@ -198,8 +198,80 @@ a {
 }
 
 .page-shell {
-  min-height: calc(100vh - 115px);
   background: #ffffff;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: min(773px, calc(100vh - 115px));
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(90px, 14vw, 220px) clamp(22px, 6vw, 96px);
+  color: var(--color-white);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: rgb(0 0 0 / 44%);
+}
+
+.hero-content {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 1040px);
+  text-align: center;
+}
+
+.hero-title {
+  width: 100%;
+  min-height: 1.12em;
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(42px, 5vw, 84px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.hero-title-accent {
+  display: inline-flex;
+  align-items: baseline;
+  min-width: 4.85em;
+  color: var(--color-primary);
+  text-align: left;
+}
+
+.hero-cursor {
+  display: inline-block;
+  width: 4px;
+  height: 0.94em;
+  margin-left: 6px;
+  transform: translateY(0.08em);
+  background: var(--color-white);
+  animation: cursor-blink 820ms steps(2, start) infinite;
+}
+
+.hero-copy {
+  width: min(100%, 820px);
+  margin: 18px 0 0;
+  color: var(--color-white);
+  font-size: clamp(20px, 2.05vw, 30px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -227,6 +299,20 @@ a {
     min-width: 128px;
     padding: 0 16px;
     border-radius: 10px;
+  }
+
+  .hero {
+    min-height: min(680px, calc(100vh - 92px));
+    padding-block: 110px;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 9vw, 64px);
+  }
+
+  .hero-copy {
+    max-width: 620px;
+    font-size: clamp(18px, 4vw, 26px);
   }
 }
 
@@ -273,6 +359,25 @@ a {
     width: 100%;
     max-width: none;
   }
+
+  .hero {
+    min-height: 590px;
+    padding: 96px 22px;
+    background-position: center;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 12vw, 54px);
+  }
+
+  .hero-title-accent {
+    min-width: 4.4em;
+  }
+
+  .hero-copy {
+    margin-top: 14px;
+    font-size: 19px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -280,5 +385,13 @@ a {
   .get-link {
     width: 100%;
     max-width: none;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-copy {
+    font-size: 17px;
   }
 }
