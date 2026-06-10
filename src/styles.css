@@ -496,6 +496,169 @@ a {
   transform: translateY(-8px) scale(1.04);
 }
 
+.fuel-prices {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 750px;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(72px, 8vw, 116px) clamp(22px, 6vw, 96px);
+  color: var(--color-white);
+  background-position: center;
+  background-size: cover;
+}
+
+.fuel-prices::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    linear-gradient(180deg, rgb(15 37 61 / 36%), rgb(15 37 61 / 18%)),
+    rgb(0 0 0 / 12%);
+}
+
+.fuel-prices-content {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 1240px);
+  text-align: center;
+}
+
+.fuel-prices h2 {
+  max-width: 1100px;
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(42px, 4.1vw, 62px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.fuel-prices-content > p {
+  max-width: 940px;
+  margin: 24px 0 50px;
+  color: var(--color-white);
+  font-size: clamp(19px, 1.75vw, 25px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.18;
+}
+
+.fuel-price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: min(100%, 1240px);
+}
+
+.fuel-price-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  min-height: 368px;
+  overflow: hidden;
+  border-radius: 31px;
+  padding: 54px 20px 26px;
+  color: var(--color-white);
+  background: rgb(92 92 89 / 86%);
+  text-align: center;
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.fuel-price-card:hover {
+  background: rgb(92 92 89 / 94%);
+  box-shadow: 0 24px 56px rgb(0 0 0 / 22%);
+  transform: translateY(-8px);
+}
+
+.fuel-price-card h3 {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.fuel-trend {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.fuel-price-value {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: 72px;
+  color: var(--color-white);
+}
+
+.fuel-price-value span {
+  font-size: clamp(48px, 4.1vw, 60px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.fuel-price-value small {
+  margin-left: 6px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.fuel-card-logo {
+  position: absolute;
+  right: -56%;
+  bottom: -5%;
+  width: 142%;
+  max-width: none;
+  opacity: 0.95;
+  pointer-events: none;
+  transition: transform 260ms ease;
+}
+
+.fuel-price-card:hover .fuel-card-logo {
+  transform: translateX(-8px) scale(1.03);
+}
+
+.fuel-price-note {
+  position: absolute;
+  right: 20px;
+  bottom: 28px;
+  left: 20px;
+  z-index: 1;
+  margin: 0;
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;
@@ -565,6 +728,16 @@ a {
   .why-card {
     grid-template-columns: minmax(0, 1fr) 190px;
     min-height: 220px;
+  }
+
+  .fuel-prices {
+    min-height: auto;
+    padding-block: 72px;
+  }
+
+  .fuel-price-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 620px;
   }
 }
 
@@ -723,6 +896,41 @@ a {
     width: min(100%, 190px);
     margin-top: 18px;
   }
+
+  .fuel-prices {
+    padding: 64px 22px 76px;
+  }
+
+  .fuel-prices h2 {
+    font-size: 40px;
+  }
+
+  .fuel-prices-content > p {
+    margin: 18px 0 34px;
+    font-size: 18px;
+  }
+
+  .fuel-price-grid {
+    grid-template-columns: 1fr;
+    max-width: 310px;
+    gap: 18px;
+  }
+
+  .fuel-price-card {
+    min-height: 330px;
+    border-radius: 24px;
+    padding-top: 42px;
+  }
+
+  .fuel-price-value {
+    margin-top: 54px;
+  }
+
+  .fuel-card-logo {
+    right: -48%;
+    bottom: -5%;
+    width: 132%;
+  }
 }
 
 @media (max-width: 360px) {
@@ -767,4 +975,17 @@ a {
   .why-card p {
     font-size: 17px;
   }
+
+  .fuel-prices h2 {
+    font-size: 34px;
+  }
+
+  .fuel-price-card h3 {
+    font-size: 21px;
+  }
+
+  .fuel-price-value span {
+    font-size: 46px;
+  }
+
 }

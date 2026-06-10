@@ -219,6 +219,71 @@ function WhyMeshwary() {
   );
 }
 
+function FuelPrices() {
+  const baseUrl = import.meta.env.BASE_URL;
+  const prices = [
+    {
+      name: "Gasoline 92",
+      price: "22.25",
+      note: "Most common fuel for everyday vehicles",
+    },
+    {
+      name: "Gasoline 95",
+      price: "24.00",
+    },
+    {
+      name: "Gasoline 80",
+      price: "20.75",
+    },
+    {
+      name: "Diesel Engine",
+      price: "20.50",
+    },
+  ];
+
+  return (
+    <section
+      className="fuel-prices"
+      style={{
+        backgroundImage: `url("${baseUrl}assets/fuel-prices-bg.jpg")`,
+      }}
+    >
+      <div className="fuel-prices-content">
+        <h2>Today's Fuel Prices, Always Up to Date!</h2>
+        <p>
+          Stay informed before every drive. Meshwary tracks the latest fuel
+          prices daily so you can plan smarter, budget better, and never get
+          caught off guard at the pump.
+        </p>
+
+        <div className="fuel-price-grid" aria-label="Latest fuel prices">
+          {prices.map((fuel) => (
+            <article className="fuel-price-card" key={fuel.name}>
+              <img
+                className="fuel-card-logo"
+                src={`${baseUrl}assets/fuel-card-logo.png`}
+                alt=""
+                aria-hidden="true"
+              />
+              <h3>
+                {fuel.name}
+                <span className="fuel-trend" aria-hidden="true">
+                  ↗
+                </span>
+              </h3>
+              <div className="fuel-price-value">
+                <span>{fuel.price}</span>
+                <small>EGP/L</small>
+              </div>
+              {fuel.note ? <p className="fuel-price-note">ⓘ {fuel.note}</p> : null}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function App() {
   return (
     <>
@@ -227,6 +292,7 @@ function App() {
         <Hero />
         <Services />
         <WhyMeshwary />
+        <FuelPrices />
       </main>
     </>
   );
