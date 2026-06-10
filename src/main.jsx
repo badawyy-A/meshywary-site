@@ -284,6 +284,33 @@ function FuelPrices() {
   );
 }
 
+function AboutCta() {
+  const baseUrl = import.meta.env.BASE_URL;
+
+  return (
+    <section className="about-cta" id="get-meshwary">
+      <div className="about-cta-content">
+        <p className="about-eyebrow">About MESHWARY</p>
+        <h2>MESHWARY, the app that thinks before you drive.</h2>
+        <p className="about-copy">
+          Say goodbye to fuel surprises. Meshwary calculates your expected
+          costs, finds the shortest route, and helps you save on every single
+          journey.
+        </p>
+        <a className="download-button" href="#get-meshwary">
+          Download now
+        </a>
+      </div>
+
+      <img
+        className="about-phone"
+        src={`${baseUrl}assets/about-phone.png`}
+        alt="Meshwary app home screen on a phone"
+      />
+    </section>
+  );
+}
+
 function App() {
   return (
     <>
@@ -293,6 +320,7 @@ function App() {
         <Services />
         <WhyMeshwary />
         <FuelPrices />
+        <AboutCta />
       </main>
     </>
   );
