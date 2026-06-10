@@ -733,7 +733,7 @@ a {
 
 .about-phone {
   display: block;
-  width: min( 58vw);
+  width: min( 38vw);
   height: auto;
   margin: 20px auto 0;
   filter: drop-shadow(0 30px 38px rgb(15 37 61 / 14%));
@@ -975,7 +975,7 @@ a {
   .about-phone {
     width: min(650px, 82vw);
     margin-top: 18px;
-    margin-bottom: -30px;
+    margin-bottom: 0px;
   }
 
   .final-cta {
@@ -1199,7 +1199,7 @@ a {
   }
 
   .about-cta {
-    padding: 48px 22px 0;
+    padding: 48px 0px 0;
   }
 
   .about-eyebrow {
@@ -1209,11 +1209,13 @@ a {
 
   .about-cta h2 {
     font-size: 40px;
+    width: 90%;
   }
 
   .about-copy {
     margin: 24px 0 28px;
     font-size: 18px;
+    width: 90%;
   }
 
   .download-button {
@@ -1223,9 +1225,9 @@ a {
   }
 
   .about-phone {
-    width: min(500px, 108vw);
+    width: min(300px, 108vw);
     margin-top: 18px;
-    margin-bottom: -22px;
+    margin-bottom: 0px;
   }
 
   .final-cta {
@@ -1331,9 +1333,11 @@ a {
 
   .about-cta h2 {
     font-size: 34px;
+    width: 90%;
   }
 
   .about-copy {
     font-size: 17px;
+    width: 90%;
   }
 }
