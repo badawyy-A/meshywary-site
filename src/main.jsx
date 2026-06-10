@@ -5,13 +5,14 @@ import "./styles.css";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <header className="site-header">
-      <a className="brand" href="/" aria-label="Meshwary home">
+      <a className="brand" href={baseUrl} aria-label="Meshwary home">
         <img
           className="brand-logo"
-          src="/assets/meshwary-logo.png"
+          src={`${baseUrl}assets/meshwary-logo.png`}
           alt="Meshwary"
         />
       </a>
