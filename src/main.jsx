@@ -311,6 +311,69 @@ function AboutCta() {
   );
 }
 
+function FinalCta() {
+  const baseUrl = import.meta.env.BASE_URL;
+
+  return (
+    <footer className="final-cta">
+      <div className="final-cta-panel">
+        <div className="final-cta-copy">
+          <h2>Plan. Route. Save.</h2>
+          <p>
+            Take control of your journey before you even leave the driveway.
+            Meshwary turns every drive into a smarter, cheaper experience.
+          </p>
+          <div className="final-cta-actions" aria-label="Meshwary actions">
+            <a className="final-pill" href="#get-meshwary">
+              <span aria-hidden="true">👀</span>
+              Download App
+            </a>
+            <a className="final-pill" href="mailto:hello@meshwary.app">
+              <span aria-hidden="true">👋</span>
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div className="final-footer-row">
+          <img
+            className="final-logo"
+            src={`${baseUrl}assets/final-cta-image.png`}
+            alt="Meshwary"
+          />
+
+          <p className="final-copyright">
+            © 2026 Meshwary. All Rights Reserved.
+          </p>
+
+          <div className="final-socials" aria-label="Social links">
+            <a
+              className="final-social-link"
+              href="https://github.com/"
+              aria-label="Meshwary on GitHub"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.22-3.37-1.22-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.04A9.37 9.37 0 0 1 12 6.98c.85 0 1.69.12 2.49.34 1.9-1.32 2.74-1.04 2.74-1.04.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.92-2.34 4.79-4.57 5.04.36.32.68.95.68 1.91v2.81c0 .27.18.6.69.49A10.16 10.16 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+              </svg>
+            </a>
+            <a
+              className="final-social-link final-social-link-text"
+              href="https://www.linkedin.com/"
+              aria-label="Meshwary on LinkedIn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              in
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 function App() {
   return (
     <>
@@ -322,6 +385,7 @@ function App() {
         <FuelPrices />
         <AboutCta />
       </main>
+      <FinalCta />
     </>
   );
 }
