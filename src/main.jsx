@@ -166,6 +166,59 @@ function Services() {
   );
 }
 
+function WhyMeshwary() {
+  const baseUrl = import.meta.env.BASE_URL;
+  const features = [
+    {
+      title: "Instant Fuel Cost Estimation",
+      copy: "Meshwary calculates your expected fuel expense. Plan and budget with confidence.",
+      image: "why-fuel-cost.png",
+      imageAlt: "Green car with a speedometer",
+    },
+    {
+      title: "AI-Powered Route Optimization",
+      copy: "Saving you time, distance, and money on every trip.",
+      image: "why-route-optimization.png",
+      imageAlt: "Route map on a phone with a green car",
+    },
+    {
+      title: "Your Personal AI Driving Assistant",
+      copy: "From route suggestions to fuel savings tips, and get instant, intelligent answers on the go.",
+      image: "why-ai-assistant.png",
+      imageAlt: "Chat assistant helping a driver",
+    },
+    {
+      title: "Real-Time Fuel Price Tracking",
+      copy: "Stay updated with daily fuel prices no surprises, no overspending.",
+      image: "why-fuel-tracking.png",
+      imageAlt: "Hybrid car at an electric fuel station",
+    },
+  ];
+
+  return (
+    <section className="why" id="about">
+      <div className="section-kicker section-kicker-green">MESHWARY vision</div>
+      <h2 className="section-title why-title">Why Meshwary?</h2>
+
+      <div className="why-grid">
+        {features.map((feature) => (
+          <article className="why-card" key={feature.title}>
+            <div className="why-card-copy">
+              <h3>{feature.title}</h3>
+              <p>{feature.copy}</p>
+            </div>
+            <img
+              className="why-card-image"
+              src={`${baseUrl}assets/${feature.image}`}
+              alt={feature.imageAlt}
+            />
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function App() {
   return (
     <>
@@ -173,6 +226,7 @@ function App() {
       <main className="page-shell">
         <Hero />
         <Services />
+        <WhyMeshwary />
       </main>
     </>
   );
